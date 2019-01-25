@@ -3,7 +3,7 @@ Date: 2019/1/23
 Category: 编程原理
 Tags: python, linux
 Summary: 编程语言原理第十版介绍
-HEADER_COVER: images/Python_logo.svg
+Cover: images/python_logo.svg
 ### 前言
 
 ## 第10版的变化

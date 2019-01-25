@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 LOAD_CONTENT_CACHE = False
 
-THEME = "attlia"
+THEME = "attila"
 
 AUTHOR = 'xiaojia'
 SITENAME = 'Stay Hungry, Stay Foolish'
@@ -15,6 +15,13 @@ OUTPUT_PATH = "output/"
 PAGE_PATHS = ["pages"]
 ARTICLE_PATHS = ["articles"]
 STATIC_PATHS = ["images"]
+
+EXTRA_PATH_METADATA = {
+    'images/favicon.ico': {'path': 'favicon.ico'},
+}
+
+PLUGIN_PATHS = ['pelican-plugins']
+PLUGINS = ['neighbors']
 
 TIMEZONE = 'UTC'
 
@@ -30,6 +37,9 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+
+DIRECT_TEMPLATES = ['index', 'categories', 'authors', 'archives']
+
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
@@ -41,11 +51,11 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 #		  ("facebook", "https://github.com/XiaojiaZhang"),
 #		  ('You can add links in your config file', '#'),
 #          ('Another social link', '#'),)
-SOCIAL = (('twitter', 'https://twitter.com/myprofile'),
-          ('github', 'https://github.com/XiaojiaZhang'),
-          ('facebook','https://facebook.com/myprofile'),
-          ('flickr','https://www.flickr.com/myprofile/'),
-          ('envelope','mailto:my@mail.address'))
+#SOCIAL = (('twitter', 'https://twitter.com/myprofile'),
+#          ('github', 'https://github.com/XiaojiaZhang'),
+#          ('facebook','https://facebook.com/myprofile'),
+#          ('flickr','https://www.flickr.com/myprofile/'),
+#          ('envelope','mailto:my@mail.address'))
 
 DEFAULT_PAGINATION = 2
 
@@ -56,12 +66,10 @@ USE_FOLDER_AS_CATEGORY = True
 DEFAULT_DATE = "fs"
 
 # Theme specific settings
-MENUITEMS = (('Archive', 'archives.html'),
-			 ("About me", "pages/about-me.html"), )
+MENUITEMS = (('Archive', '/archives.html'), 
+			 ("书评", "/category/shu-ping.html"),)
 
 HEADER_COVER = "images/home-bg.jpg"
-GITHUB_URL = "https://github.com/XiaojiaZhang"
-
 
 
 
@@ -69,7 +77,6 @@ GITHUB_URL = "https://github.com/XiaojiaZhang"
 
 HEADER_COVERS_BY_TAG = {'python': 'images/python_logo.svg',
 						'linux': "images/linux_logo.png"}
-
 
 HEADER_COLOR = "white"
 AUTHORS_BIO = {
