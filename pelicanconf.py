@@ -23,6 +23,17 @@ EXTRA_PATH_METADATA = {
 PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = ['neighbors']
 
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+		'markdown.extensions.toc':{},
+    },
+    'output_format': 'html5',
+}
+
+
 TIMEZONE = 'UTC'
 
 DEFAULT_LANG = 'en'
@@ -67,7 +78,8 @@ DEFAULT_DATE = "fs"
 
 # Theme specific settings
 MENUITEMS = (('Archive', '/archives.html'), 
-			 ("书评", "/category/shu-ping.html"),)
+			 ("书评", "/category/shu-ping.html"),
+			 ("杂文", "/category/za-wen.html"))
 
 HEADER_COVER = "images/home-bg.jpg"
 
