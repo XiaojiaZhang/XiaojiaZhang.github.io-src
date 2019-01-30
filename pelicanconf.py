@@ -79,7 +79,8 @@ DEFAULT_DATE = "fs"
 # Theme specific settings
 MENUITEMS = (('Archive', '/archives.html'), 
 			 ("书评", "/category/shu-ping.html"),
-			 ("杂文", "/category/za-wen.html"))
+			 ("杂文", "/category/za-wen.html"),
+			 ("python", "/category/python.html"))
 
 HEADER_COVER = "images/home-bg.jpg"
 
