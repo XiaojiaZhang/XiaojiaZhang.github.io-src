@@ -80,7 +80,9 @@ DEFAULT_DATE = "fs"
 MENUITEMS = (('Archive', '/archives.html'), 
 			 ("书评", "/category/shu-ping.html"),
 			 ("杂文", "/category/za-wen.html"),
-			 ("python", "/category/python.html"))
+			 ("python", "/category/python.html"),
+			("计算机网络", "/category/ji-suan-ji-wang-luo.html"),
+)
 
 HEADER_COVER = "images/home-bg.jpg"
 
