@@ -82,6 +82,7 @@ MENUITEMS = (('Archive', '/archives.html'),
 			 ("杂文", "/category/za-wen.html"),
 			 ("python", "/category/python.html"),
 			("计算机网络", "/category/ji-suan-ji-wang-luo.html"),
+			("scala", "/category/scala.html"),
 )
 
 HEADER_COVER = "images/home-bg.jpg"
