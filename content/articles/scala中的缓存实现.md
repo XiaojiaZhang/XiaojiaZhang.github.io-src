@@ -37,7 +37,7 @@ def isPrime(num: Int): Boolean = {
 
 
 ```scala
-def memorizedIsPrime: Int => Boolean = {
+def memoizedIsPrime: Int => Boolean = {
     
   def isPrime(num: Int): Boolean = {
     2 to (num - 1) forall (x => num % x != 0)
@@ -61,7 +61,7 @@ def memorizedIsPrime: Int => Boolean = {
 
 
 ```scala
-val isPrime2 = memorizedIsPrime
+val isPrime2 = memoizedIsPrime
 ```
 
 ```scala
@@ -92,7 +92,7 @@ isPrime2(10)
 
 
 ```scala
-def memorizedFun[K, V](f: K => V): K => V = {
+def memoizedFun[K, V](f: K => V): K => V = {
     val cache = collection.mutable.Map.empty[K, V]
     
     num => cache.getOrElse(num,
@@ -104,7 +104,7 @@ def memorizedFun[K, V](f: K => V): K => V = {
 
 
 ```scala
-val isPrime3 = memorizedFun(isPrime)
+val isPrime3 = memoizedFun(isPrime)
 
 ```
 
@@ -124,6 +124,20 @@ isPrime3(10)
 
     Boolean = false
 
-在上述实现中，memorizedFun函数接受拥有一个入参的主体计算函数，基于该通用方案，我们定义了了`isPrime3`函数，调用结果显示，该函数支持缓存。
+在上述实现中，memoizedFun函数接受拥有一个入参的主体计算函数，基于该通用方案，我们定义了了`isPrime3`函数，调用结果显示，该函数支持缓存。
 
 本文主要参考[Scala: Optimizing expensive functions with Memoization](https://medium.com/musings-on-functional-programming/scala-optimizing-expensive-functions-with-memoization-c05b781ae826)
+
+注： 是否注意到在整篇文章中，我们使用的是单词**memoized**而不是**memorized**这个单词。一开始我并没有注意到这个问题。经过google发现，**memoized**虽然不是一个单词，但它是计算机中专门用于描述缓存机制的一个术语。
+其中一段关于memoization与memorization的差异的解释如下：
+
+> Memorization implies that you studied ahead of time. E.g. I memorized the Fibonacci numbers, so >when you ask me "What's the 24th Fibonacci number?" I can instantly say 28657.
+
+> Memoization is remembering something after you did it once the slow way. When you ask me "What's the 24th Fibonacci number?" I have to go calculate it, but I remember the answer, so the second time you ask me, I can say it right away.
+
+具体的讨论可以参考以下两处链接：
+
+[Wiki: Memoization](https://en.wikipedia.org/wiki/Memoization)
+
+[stackoverflow: Why memoization instead of memoRization?](https://stackoverflow.com/questions/45242851/why-memoization-instead-of-memorization)
+
